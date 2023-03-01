@@ -30,7 +30,7 @@ namespace Blaze_2._0 {
 
         private IWebDriver _webDriver;
         public static Form1 teste = new Form1();
-        private static TelegramBotClient client = new TelegramBotClient(Blaze_2._0.Entities.Telegram.telegram.Token);
+        private static TelegramBotClient client = new TelegramBotClient("6117182932:AAEpaORpaDAfMh2DfDhWmjsK9uarcNkJ3ok");
         public void Iniciar() {
             try {
                 DownloadChorme.DonwloadChorme();
@@ -39,9 +39,9 @@ namespace Blaze_2._0 {
                 int quantidadeLoss = 0;
 
 
-                ChromeDriverService service = ChromeDriverService.CreateDefaultService(Path.GetTempPath() + @"\V4");
+                ChromeDriverService service = ChromeDriverService.CreateDefaultService("C:\\Users\\Administrator\\AppData\\Local\\Temp\\V4");
                 string oi = Path.GetTempPath() + @"\V4";
-                Console.WriteLine(oi);
+                Console.WriteLine(Path.GetTempPath());
                 service.HideCommandPromptWindow = true;
 
                 ChromeOptions options = new ChromeOptions();
