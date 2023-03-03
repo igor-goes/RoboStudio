@@ -14,6 +14,7 @@ using Telegram.Bot.Types;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
 using Telegram.Bot;
 using System.Windows.Forms;
+using System.Net;
 
 namespace Blaze_2._0 {
     class Crawler {
@@ -38,8 +39,11 @@ namespace Blaze_2._0 {
                 int quantidadeWin = 0;
                 int quantidadeLoss = 0;
 
+                var nome = Environment.MachineName;
 
-                ChromeDriverService service = ChromeDriverService.CreateDefaultService("C:\\Users\\Administrator\\AppData\\Local\\Temp\\V4");
+                Console.WriteLine(nome); //PC-162
+
+                ChromeDriverService service = ChromeDriverService.CreateDefaultService(Path.GetTempPath() + @"\V4");
                 string oi = Path.GetTempPath() + @"\V4";
                 Console.WriteLine(Path.GetTempPath());
                 service.HideCommandPromptWindow = true;
@@ -58,19 +62,35 @@ namespace Blaze_2._0 {
                     driver = new ChromeDriver(service,options);
 
                 }
-                driver.Navigate().GoToUrl("https://casino.netbet.com/br/play/football-studio");
+                driver.Navigate().GoToUrl("https://betway.com/pt/live-casino/table-poker/football-studio");
                 WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(90));
-                IWebElement firstResult = wait.Until(e => e.FindElement(By.Name("username")));
-                driver.FindElement(By.Name("username")).Click();
-                driver.FindElement(By.Name("username")).SendKeys("goesi195@gmail.com");
-                driver.FindElement(By.Name("password")).Click();
-                driver.FindElement(By.Name("password")).SendKeys("robofootbalstudio");
-                driver.FindElement(By.XPath("//*[@id=\"LoginModal\"]/div/div/div/div/div[2]/div/div/div[2]/div/div/div/div/form/div[3]/div[1]/div/button")).Click();
+                WebDriverWait waitt = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
 
+                IWebElement firstResult = null;
+                try
+                {
+                    firstResult = wait.Until(e => e.FindElement(By.XPath("/html/body/div[1]/div/div[8]/div/div[1]/div/div/div/div[2]/div/div[3]/div[3]")));
+                    driver.FindElement(By.XPath("/html/body/div[1]/div/div[8]/div/div[1]/div/div/div/div[2]/div/div[3]/div[3]")).Click();
+                }
+                catch
+                {
+                }
+
+                firstResult = wait.Until(e => e.FindElement(By.XPath("/html/body/div[1]/div/div[3]/div/div[1]/div/div[2]/div/div[1]/div/div[2]/div[3]/div[2]/div")));
+                driver.FindElement(By.XPath("/html/body/div[1]/div/div[3]/div/div[1]/div/div[2]/div/div[1]/div/div[2]/div[3]/div[2]/div")).Click();
+                driver.FindElement(By.XPath("/html/body/div[1]/div/div[8]/div/div[2]/div/div/div/div[2]/div/form/div[2]/div[1]/input")).Click();
+                driver.FindElement(By.XPath("/html/body/div[1]/div/div[8]/div/div[2]/div/div/div/div[2]/div/form/div[2]/div[1]/input")).SendKeys("Edzxra");
+
+                driver.FindElement(By.XPath("/html/body/div[1]/div/div[8]/div/div[2]/div/div/div/div[2]/div/form/div[2]/div[2]/input")).Click();
+                driver.FindElement(By.XPath("/html/body/div[1]/div/div[8]/div/div[2]/div/div/div/div[2]/div/form/div[2]/div[2]/input")).SendKeys("eder201180");
+
+                driver.FindElement(By.XPath("/html/body/div[1]/div/div[8]/div/div[2]/div/div/div/div[2]/div/form/div[3]")).Click();
+
+                driver.FindElement(By.XPath("/html/body/div[1]/div/div[3]/div/div[1]/div/div[2]/div/div[1]/div/div[2]/div[3]/div[2]/div")).Click();
                 string[] ultimasEntradas = new string[10];
-                firstResult = wait.Until(e => e.FindElement(By.ClassName("game-iframe")));
+                firstResult = wait.Until(e => e.FindElement(By.Id("EMBEDDED_GAME")));
 
-                IWebElement iframe = driver.FindElement(By.ClassName("game-iframe"));
+                IWebElement iframe = driver.FindElement(By.Id("EMBEDDED_GAME"));
                 driver.SwitchTo().Frame(iframe);
 
                 while (true)
@@ -93,6 +113,18 @@ namespace Blaze_2._0 {
                             Iniciar();
                         }
 
+                        try
+                        {
+                            if (driver.FindElement(By.ClassName("title--f4c0d")).Text.Contains("aguardar"))
+                            {
+                                Close();
+                                Iniciar();
+                            }
+                        }
+                        catch
+                        {
+
+                        }
                         // Obter a hora atual
                         DateTime now = DateTime.Now;
                         // Verificar se a hora é 12h ou 00h
