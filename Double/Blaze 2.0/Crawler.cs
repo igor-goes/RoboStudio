@@ -86,7 +86,11 @@ namespace Blaze_2._0 {
 
                 driver.FindElement(By.XPath("/html/body/div[1]/div/div[8]/div/div[2]/div/div/div/div[2]/div/form/div[3]")).Click();
 
-                driver.FindElement(By.XPath("/html/body/div[1]/div/div[3]/div/div[1]/div/div[2]/div/div[1]/div/div[2]/div[3]/div[2]/div")).Click();
+                try
+                {
+                    driver.FindElement(By.XPath("/html/body/div[1]/div/div[3]/div/div[1]/div/div[2]/div/div[1]/div/div[2]/div[3]/div[2]/div")).Click();
+                }
+                catch { }
                 string[] ultimasEntradas = new string[10];
                 firstResult = wait.Until(e => e.FindElement(By.Id("EMBEDDED_GAME")));
 
