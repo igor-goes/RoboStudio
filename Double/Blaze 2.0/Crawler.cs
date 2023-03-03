@@ -98,6 +98,7 @@ namespace Blaze_2._0 {
                 driver.SwitchTo().Frame(iframe);
 
                 while (true)
+
                 {
                     try {
                         try
