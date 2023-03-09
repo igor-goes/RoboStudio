@@ -151,3 +151,4 @@ C:\Users\Pichau\Desktop\Lab01\RoboStudio\Footbal\FootbalStudio\obj\Debug\Double.
 C:\Users\Pichau\Desktop\Lab01\RoboStudio\Footbal\FootbalStudio\obj\Debug\Blaze 2.0.csproj.CopyComplete
 C:\Users\Pichau\Desktop\Lab01\RoboStudio\Footbal\FootbalStudio\obj\Debug\Double.exe
 C:\Users\Pichau\Desktop\Lab01\RoboStudio\Footbal\FootbalStudio\obj\Debug\Double.pdb
+C:\Users\Pichau\Desktop\Lab01\RoboStudio\Footbal\FootbalStudio\obj\Debug\Blaze 2.0.csproj.SuggestedBindingRedirects.cache

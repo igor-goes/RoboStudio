@@ -66,14 +66,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Double.exe" size="12828672">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Double.exe" size="12828160">
       <assemblyIdentity name="Double" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>DVYw1FZtqwGl7bu3GUTlYhVLxORLUfqrjpRZWi7BR9o=</dsig:DigestValue>
+        <dsig:DigestValue>9sD09WL8LMiXjOwQdEfF7Q4TCGz34omuDv+Zat+nSIc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -269,13 +269,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="Double.exe.config" size="186">
+  <file name="Double.exe.config" size="184">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>GUHS+OFx1101tsQAmSxc2HiZ6DFfxLEUn0Es0Znho/o=</dsig:DigestValue>
+      <dsig:DigestValue>FihlZtVNgcNyH37Pf0Jtll3jZOm+L55ijXNjtoS2/mo=</dsig:DigestValue>
     </hash>
   </file>
   <file name="free.ico" size="123864">
