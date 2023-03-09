@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Threading.Tasks;
 using Telegram.Bot;
+using Telegram.Bot.Requests;
+using Telegram.Bot.Types;
+using Telegram.Bot.Types.Enums;
 
 namespace Blaze_2._0 {
-
 
     class TelegramBot {
 
@@ -15,10 +18,7 @@ namespace Blaze_2._0 {
         private static TelegramBotClient client = new TelegramBotClient("6117182932:AAEpaORpaDAfMh2DfDhWmjsK9uarcNkJ3ok");
         private static List<int> ListaApagar = new List<int>();
 
-
-
-
-        public async void EnviarMensagem(string mensagem, bool responder, EnumMensagem tipoMensagem, Color corWin) {
+            public async void EnviarMensagem(string mensagem, bool responder, EnumMensagem tipoMensagem, Color corWin,Message msgAtual = null) {
             try {
 
                 if(corWin == Color.Red) {
@@ -30,16 +30,13 @@ namespace Blaze_2._0 {
 
                 Emoji.ReplaceEmojis(ref mensagem);
 
-                Telegram.Bot.Types.Message msgAtual;
                 if(responder) {
                     msgAtual = await client.SendTextMessageAsync(chatId: -1001822411577, text: mensagem, parseMode: Telegram.Bot.Types.Enums.ParseMode.Html, disableWebPagePreview: true, replyToMessageId: idResposta);
                 }
                 else {
                     msgAtual = await client.SendTextMessageAsync(chatId: -1001822411577, text: mensagem, parseMode: Telegram.Bot.Types.Enums.ParseMode.Html, disableWebPagePreview: true);
                 }
-
                 idResposta = msgAtual.MessageId;
-
 
                 ConsomeListaApagar(tipoMensagem, msgAtual.MessageId);
                 ApagarMensagem(tipoMensagem);

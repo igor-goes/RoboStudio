@@ -26,7 +26,7 @@ namespace Blaze_2._0 {
 
 
         ChromeDriver driver;
-        int horaJogada = 0;
+        int horaJogada = 98;
         int horarioReiniciou = 99;
 
         private IWebDriver _webDriver;
@@ -134,7 +134,7 @@ namespace Blaze_2._0 {
                         DateTime now = DateTime.Now;
                         // Verificar se a hora é 12h ou 00h
 
-                        if ((now.Hour == 12 || now.Hour == 00) && now.Hour != horaJogada)
+                        if ((now.Hour == 12 || now.Hour == 0) && now.Hour != horaJogada)
                         {
 
                             quantidadeWin = teste.QuantidadeWin();
@@ -170,11 +170,11 @@ namespace Blaze_2._0 {
                         }
                         catch (Exception ex)
                         {
-                            if (!ex.ToString().Contains("Unable to locate element:"))
+                            try
                             {
                                 driver.FindElement(By.ClassName("clickable--394a7")).Click();
                             }
-
+                            catch { }
                         }
                         foreach (var teste in driver.FindElement(By.CssSelector("div[data-role ='history-statistic']")).FindElements(By.ClassName("historyItem--a1907")))
                         {
@@ -279,8 +279,6 @@ namespace Blaze_2._0 {
 
             try {
                 if (driver != null) {
-                    driver.Close();
-                    driver.Dispose();
                     driver.Quit();
                 }
             } catch { }
