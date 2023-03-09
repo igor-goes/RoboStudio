@@ -196,7 +196,7 @@ namespace Blaze_2._0 {
             int contador = 0;
 
             try {
-                Resetar();
+                //Resetar();
                 if(Crawler.retornos != null && !string.IsNullOrEmpty(Crawler.retornos[contador])) {
 
                     LbIdentificador.Text = identificacaoEstrategia.ToString();
@@ -514,7 +514,7 @@ namespace Blaze_2._0 {
 
                         new TelegramBot().EnviarMensagem(Mensagem.mensagem.Loss, true, EnumMensagem.Loss, DgDados[12, linhaEstrategia].Style.BackColor);
                     }
-
+                    quantidadeLoss++;
                     PontuarJogada(false, linhaEstrategia,"Rodada 1");
                     return;
                 }
@@ -546,6 +546,7 @@ namespace Blaze_2._0 {
                     if(bool.Parse(DgDados[15, linhaEstrategia].Value.ToString())) {
                         new TelegramBot().EnviarMensagem(Mensagem.mensagem.Loss, true, EnumMensagem.Loss, DgDados[12, linhaEstrategia].Style.BackColor);
                     }
+                    quantidadeLoss++;
                     PontuarJogada(false, linhaEstrategia,"Rodada 2");
                     return;
                 }
@@ -577,6 +578,7 @@ namespace Blaze_2._0 {
                     if(bool.Parse(DgDados[15, linhaEstrategia].Value.ToString())) {
                         new TelegramBot().EnviarMensagem(Mensagem.mensagem.Loss, true, EnumMensagem.Loss, DgDados[12, linhaEstrategia].Style.BackColor);
                     }
+                    quantidadeLoss++;
                     PontuarJogada(false, linhaEstrategia,"Rodada 3");
                     return;
                 }

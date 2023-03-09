@@ -101,26 +101,26 @@ namespace Blaze_2._0 {
 
                 {
                     try {
+                        //try
+                        //{
+                        //    firstResult = wait.Until(e => e.FindElement(By.ClassName("titleContainer--fe91d")));
+                        //    Console.WriteLine(driver.FindElement(By.ClassName("titleContainer--fe91d")).Text);
+
+                        //    if (!driver.FindElement(By.ClassName("titleContainer--fe91d")).Text.Contains("SALDO BAIXO"))
+                        //    {
+                        //        Close();
+                        //        Iniciar();
+                        //    }
+                        //}
+                        //catch
+                        //{
+                        //    Close();
+                        //    Iniciar();
+                        //}
+
                         try
                         {
-                            firstResult = wait.Until(e => e.FindElement(By.ClassName("titleContainer--fe91d")));
-                            Console.WriteLine(driver.FindElement(By.ClassName("titleContainer--fe91d")).Text);
-
-                            if (!driver.FindElement(By.ClassName("titleContainer--fe91d")).Text.Contains("SALDO BAIXO"))
-                            {
-                                Close();
-                                Iniciar();
-                            }
-                        }
-                        catch
-                        {
-                            Close();
-                            Iniciar();
-                        }
-
-                        try
-                        {
-                            if (driver.FindElement(By.ClassName("title--f4c0d")).Text.Contains("aguardar"))
+                            if (driver.FindElement(By.ClassName("title--f4c0d")).Text.Contains("conexão"))
                             {
                                 Close();
                                 Iniciar();
@@ -281,7 +281,7 @@ namespace Blaze_2._0 {
                 if (driver != null) {
                     driver.Quit();
                 }
-            } catch { }
+            } catch(Exception ex) { }
         }
 
     }
