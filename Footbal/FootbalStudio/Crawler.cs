@@ -16,8 +16,10 @@ using Telegram.Bot;
 using System.Windows.Forms;
 using System.Net;
 
-namespace Blaze_2._0 {
-    class Crawler {
+namespace Blaze_2._0
+{
+    class Crawler
+    {
 
 
 
@@ -32,8 +34,10 @@ namespace Blaze_2._0 {
         private IWebDriver _webDriver;
         public static Form1 teste = new Form1();
         private static TelegramBotClient client = new TelegramBotClient("6117182932:AAEpaORpaDAfMh2DfDhWmjsK9uarcNkJ3ok");
-        public void Iniciar() {
-            try {
+        public void Iniciar()
+        {
+            try
+            {
                 DownloadChorme.DonwloadChorme();
                 retornos = new string[12];
                 int quantidadeWin = 0;
@@ -49,58 +53,59 @@ namespace Blaze_2._0 {
                 service.HideCommandPromptWindow = true;
 
                 ChromeOptions options = new ChromeOptions();
-               // options.AddArgument("headless");
+                // options.AddArgument("headless");
 
                 try
                 {
 
-                    driver = new ChromeDriver(service,options);
+                    driver = new ChromeDriver(service, options);
 
                 }
                 catch
                 {
-                    driver = new ChromeDriver(service,options);
+                    driver = new ChromeDriver(service, options);
 
                 }
-                driver.Navigate().GoToUrl("https://betway.com/pt/live-casino/table-poker/football-studio");
+                driver.Navigate().GoToUrl("https://www.br4bet.com/casino/?cat=live&gameid=2375");
                 WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(90));
                 WebDriverWait waitt = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
 
                 IWebElement firstResult = null;
-                try
-                {
-                    firstResult = wait.Until(e => e.FindElement(By.XPath("/html/body/div[1]/div/div[8]/div/div[1]/div/div/div/div[2]/div/div[3]/div[3]")));
-                    driver.FindElement(By.XPath("/html/body/div[1]/div/div[8]/div/div[1]/div/div/div/div[2]/div/div[3]/div[3]")).Click();
-                }
-                catch
-                {
-                }
+                //try
+                //{
+                //    firstResult = wait.Until(e => e.FindElement(By.XPath("/html/body/div[1]/div/div[8]/div/div[1]/div/div/div/div[2]/div/div[3]/div[3]")));
+                //    driver.FindElement(By.XPath("/html/body/div[1]/div/div[8]/div/div[1]/div/div/div/div[2]/div/div[3]/div[3]")).Click();
+                //}
+                //catch
+                //{
+                //}
 
-                firstResult = wait.Until(e => e.FindElement(By.XPath("/html/body/div[1]/div/div[3]/div/div[1]/div/div[2]/div/div[1]/div/div[2]/div[3]/div[2]/div")));
-                driver.FindElement(By.XPath("/html/body/div[1]/div/div[3]/div/div[1]/div/div[2]/div/div[1]/div/div[2]/div[3]/div[2]/div")).Click();
-                driver.FindElement(By.XPath("/html/body/div[1]/div/div[8]/div/div[2]/div/div/div/div[2]/div/form/div[2]/div[1]/input")).Click();
-                driver.FindElement(By.XPath("/html/body/div[1]/div/div[8]/div/div[2]/div/div/div/div[2]/div/form/div[2]/div[1]/input")).SendKeys("Edzxra");
+                //firstResult = wait.Until(e => e.FindElement(By.XPath("/html/body/div[1]/div/div[3]/div/div[1]/div/div[2]/div/div[1]/div/div[2]/div[3]/div[2]/div")));
+                //driver.FindElement(By.XPath("/html/body/div[1]/div/div[3]/div/div[1]/div/div[2]/div/div[1]/div/div[2]/div[3]/div[2]/div")).Click();
+                //driver.FindElement(By.XPath("/html/body/div[1]/div/div[8]/div/div[2]/div/div/div/div[2]/div/form/div[2]/div[1]/input")).Click();
+                //driver.FindElement(By.XPath("/html/body/div[1]/div/div[8]/div/div[2]/div/div/div/div[2]/div/form/div[2]/div[1]/input")).SendKeys("Edzxra");
 
-                driver.FindElement(By.XPath("/html/body/div[1]/div/div[8]/div/div[2]/div/div/div/div[2]/div/form/div[2]/div[2]/input")).Click();
-                driver.FindElement(By.XPath("/html/body/div[1]/div/div[8]/div/div[2]/div/div/div/div[2]/div/form/div[2]/div[2]/input")).SendKeys("eder201180");
+                //driver.FindElement(By.XPath("/html/body/div[1]/div/div[8]/div/div[2]/div/div/div/div[2]/div/form/div[2]/div[2]/input")).Click();
+                //driver.FindElement(By.XPath("/html/body/div[1]/div/div[8]/div/div[2]/div/div/div/div[2]/div/form/div[2]/div[2]/input")).SendKeys("eder201180");
 
-                driver.FindElement(By.XPath("/html/body/div[1]/div/div[8]/div/div[2]/div/div/div/div[2]/div/form/div[3]")).Click();
+                //driver.FindElement(By.XPath("/html/body/div[1]/div/div[8]/div/div[2]/div/div/div/div[2]/div/form/div[3]")).Click();
 
-                try
-                {
-                    driver.FindElement(By.XPath("/html/body/div[1]/div/div[3]/div/div[1]/div/div[2]/div/div[1]/div/div[2]/div[3]/div[2]/div")).Click();
-                }
-                catch { }
+                //try
+                //{
+                //    driver.FindElement(By.XPath("/html/body/div[1]/div/div[3]/div/div[1]/div/div[2]/div/div[1]/div/div[2]/div[3]/div[2]/div")).Click();
+                //}
+                //catch { }
                 string[] ultimasEntradas = new string[10];
-                firstResult = wait.Until(e => e.FindElement(By.Id("EMBEDDED_GAME")));
+                firstResult = wait.Until(e => e.FindElement(By.XPath("/html/body/div[1]/div/main/div[3]/div[1]/div/div[2]/div[3]/div/iframe")));
 
-                IWebElement iframe = driver.FindElement(By.Id("EMBEDDED_GAME"));
+                IWebElement iframe = driver.FindElement(By.XPath("/html/body/div[1]/div/main/div[3]/div[1]/div/div[2]/div[3]/div/iframe"));
                 driver.SwitchTo().Frame(iframe);
 
                 while (true)
 
                 {
-                    try {
+                    try
+                    {
                         //try
                         //{
                         //    firstResult = wait.Until(e => e.FindElement(By.ClassName("titleContainer--fe91d")));
@@ -122,13 +127,28 @@ namespace Blaze_2._0 {
                         {
                             if (driver.FindElement(By.ClassName("title--f4c0d")).Text.Contains("conexão"))
                             {
-                                Close();
-                                Iniciar();
+                                driver.Navigate().GoToUrl("https://www.br4bet.com/casino/?cat=live&gameid=2375");
+                                firstResult = wait.Until(e => e.FindElement(By.XPath("/html/body/div[1]/div/main/div[3]/div[1]/div/div[2]/div[3]/div/iframe")));
+
+                                 iframe = driver.FindElement(By.XPath("/html/body/div[1]/div/main/div[3]/div[1]/div/div[2]/div[3]/div/iframe"));
+                                driver.SwitchTo().Frame(iframe);
                             }
+
                         }
                         catch
                         {
+                            try
+                            {
+                                if (driver.FindElement(By.XPath("/html/body")).Text.Contains("User authentication failed"))
+                                {
+                                    driver.Navigate().GoToUrl("https://www.br4bet.com/casino/?cat=live&gameid=2375");
+                                    firstResult = wait.Until(e => e.FindElement(By.XPath("/html/body/div[1]/div/main/div[3]/div[1]/div/div[2]/div[3]/div/iframe")));
 
+                                     iframe = driver.FindElement(By.XPath("/html/body/div[1]/div/main/div[3]/div[1]/div/div[2]/div[3]/div/iframe"));
+                                    driver.SwitchTo().Frame(iframe);
+                                }
+                            }
+                            catch { }   
                         }
                         // Obter a hora atual
                         DateTime now = DateTime.Now;
@@ -187,25 +207,28 @@ namespace Blaze_2._0 {
                                 dadoAtual = "white";
                             retornos[contador] = dadoAtual;
                             contador++;
-                            if(contador >= 12) {
+                            if (contador >= 12)
+                            {
                                 break;
                             }
                         }
 
 
-                            if (string.IsNullOrEmpty(ultimasEntradas[0]) &&
-                            string.IsNullOrEmpty(ultimasEntradas[1]) &&
-                            string.IsNullOrEmpty(ultimasEntradas[2]) &&
-                            string.IsNullOrEmpty(ultimasEntradas[3]) &&
-                            string.IsNullOrEmpty(ultimasEntradas[4]) &&
-                            string.IsNullOrEmpty(ultimasEntradas[5]) &&
-                            string.IsNullOrEmpty(ultimasEntradas[6]) &&
-                            string.IsNullOrEmpty(ultimasEntradas[7]) &&
-                            string.IsNullOrEmpty(ultimasEntradas[8]) &&
-                            string.IsNullOrEmpty(ultimasEntradas[9])) {                            
+                        if (string.IsNullOrEmpty(ultimasEntradas[0]) &&
+                        string.IsNullOrEmpty(ultimasEntradas[1]) &&
+                        string.IsNullOrEmpty(ultimasEntradas[2]) &&
+                        string.IsNullOrEmpty(ultimasEntradas[3]) &&
+                        string.IsNullOrEmpty(ultimasEntradas[4]) &&
+                        string.IsNullOrEmpty(ultimasEntradas[5]) &&
+                        string.IsNullOrEmpty(ultimasEntradas[6]) &&
+                        string.IsNullOrEmpty(ultimasEntradas[7]) &&
+                        string.IsNullOrEmpty(ultimasEntradas[8]) &&
+                        string.IsNullOrEmpty(ultimasEntradas[9]))
+                        {
 
-                            for (int t = 0; t < 10; t++) {      
-                                    ultimasEntradas[t] = retornos[t];                                
+                            for (int t = 0; t < 10; t++)
+                            {
+                                ultimasEntradas[t] = retornos[t];
                             }
 
                             Atualizou = true;
@@ -213,8 +236,10 @@ namespace Blaze_2._0 {
                             th.Start();
                             Thread.Sleep(500);
 
-                        } else {                
-                            
+                        }
+                        else
+                        {
+
                             if (ultimasEntradas[0] != retornos[0] ||
                                 ultimasEntradas[1] != retornos[1] ||
                                 ultimasEntradas[2] != retornos[2] ||
@@ -224,11 +249,13 @@ namespace Blaze_2._0 {
                                 ultimasEntradas[6] != retornos[6] ||
                                 ultimasEntradas[7] != retornos[7] ||
                                 ultimasEntradas[8] != retornos[8] ||
-                                ultimasEntradas[9] != retornos[9]) {
+                                ultimasEntradas[9] != retornos[9])
+                            {
 
 
 
-                                for (int t = 0; t < 10; t++) {
+                                for (int t = 0; t < 10; t++)
+                                {
                                     ultimasEntradas[t] = retornos[t];
                                 }
 
@@ -243,45 +270,62 @@ namespace Blaze_2._0 {
                         }
 
 
-                    } 
-                    catch (Exception ex){
+                    }
+                    catch (Exception ex)
+                    {
                         if (ex.Message.Contains("disconnected"))
                         {
-                            Close();
-                            Iniciar();
+                            driver.Navigate().GoToUrl("https://www.br4bet.com/casino/?cat=live&gameid=2375");
+                            firstResult = wait.Until(e => e.FindElement(By.XPath("/html/body/div[1]/div/main/div[3]/div[1]/div/div[2]/div[3]/div/iframe")));
+
+                            iframe = driver.FindElement(By.XPath("/html/body/div[1]/div/main/div[3]/div[1]/div/div[2]/div[3]/div/iframe"));
+                            driver.SwitchTo().Frame(iframe);
                         }
                         else if (ex.Message.Contains("no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\".titleContainer\\-\\-fe91d"))
                         {
-                            Close();
-                            Iniciar();
+                            driver.Navigate().GoToUrl("https://www.br4bet.com/casino/?cat=live&gameid=2375");
+                            firstResult = wait.Until(e => e.FindElement(By.XPath("/html/body/div[1]/div/main/div[3]/div[1]/div/div[2]/div[3]/div/iframe")));
+
+                            iframe = driver.FindElement(By.XPath("/html/body/div[1]/div/main/div[3]/div[1]/div/div[2]/div[3]/div/iframe"));
+                            driver.SwitchTo().Frame(iframe);
                         }
                     }
 
                 }
 
-            } catch {
+            }
+            catch
+            {
             }
         }
 
         public static bool engine;
 
-        private void InserirGame() {
-            try {
-              
-                    new DataBase().Insert($"INSERT INTO Game VALUES (Null,\"{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}\",\"{ retornos[0].Replace("X", "")}\");");
-                
-            } catch {
+        private void InserirGame()
+        {
+            try
+            {
+
+                new DataBase().Insert($"INSERT INTO Game VALUES (Null,\"{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}\",\"{retornos[0].Replace("X", "")}\");");
+
+            }
+            catch
+            {
 
             }
         }
 
-        public void Close() {
+        public void Close()
+        {
 
-            try {
-                if (driver != null) {
+            try
+            {
+                if (driver != null)
+                {
                     driver.Quit();
                 }
-            } catch(Exception ex) { }
+            }
+            catch (Exception ex) { }
         }
 
     }

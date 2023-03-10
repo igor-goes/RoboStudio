@@ -66,14 +66,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Double.exe" size="12828160">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Double.exe" size="12827648">
       <assemblyIdentity name="Double" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>9sD09WL8LMiXjOwQdEfF7Q4TCGz34omuDv+Zat+nSIc=</dsig:DigestValue>
+        <dsig:DigestValue>RjT8B8Z1djd16dWca/v7ZWQJOxIHqp2c7gNJ9hjFcNc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
