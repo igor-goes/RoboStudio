@@ -66,35 +66,35 @@ namespace Blaze_2._0
                     driver = new ChromeDriver(service, options);
 
                 }
-                driver.Navigate().GoToUrl("https://www.br4bet.com/casino/?cat=live&gameid=2375");
+                driver.Navigate().GoToUrl("https://casino.netbet.com/br/play/football-studio");
                 WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(90));
                 WebDriverWait waitt = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
 
                 IWebElement firstResult = null;
-                //try
-                //{
-                //    firstResult = wait.Until(e => e.FindElement(By.XPath("/html/body/div[1]/div/div[8]/div/div[1]/div/div/div/div[2]/div/div[3]/div[3]")));
-                //    driver.FindElement(By.XPath("/html/body/div[1]/div/div[8]/div/div[1]/div/div/div/div[2]/div/div[3]/div[3]")).Click();
-                //}
-                //catch
-                //{
-                //}
+                try
+                {
+                    firstResult = wait.Until(e => e.FindElement(By.XPath("/html/body/div[1]/div/div[8]/div/div[1]/div/div/div/div[2]/div/div[3]/div[3]")));
+                    driver.FindElement(By.XPath("/html/body/div[1]/div/div[8]/div/div[1]/div/div/div/div[2]/div/div[3]/div[3]")).Click();
+                }
+                catch
+                {
+                }
 
-                //firstResult = wait.Until(e => e.FindElement(By.XPath("/html/body/div[1]/div/div[3]/div/div[1]/div/div[2]/div/div[1]/div/div[2]/div[3]/div[2]/div")));
-                //driver.FindElement(By.XPath("/html/body/div[1]/div/div[3]/div/div[1]/div/div[2]/div/div[1]/div/div[2]/div[3]/div[2]/div")).Click();
-                //driver.FindElement(By.XPath("/html/body/div[1]/div/div[8]/div/div[2]/div/div/div/div[2]/div/form/div[2]/div[1]/input")).Click();
-                //driver.FindElement(By.XPath("/html/body/div[1]/div/div[8]/div/div[2]/div/div/div/div[2]/div/form/div[2]/div[1]/input")).SendKeys("Edzxra");
+                firstResult = wait.Until(e => e.FindElement(By.XPath("/html/body/div[1]/div/div[3]/div/div[1]/div/div[2]/div/div[1]/div/div[2]/div[3]/div[2]/div")));
+                driver.FindElement(By.XPath("/html/body/div[1]/div/div[3]/div/div[1]/div/div[2]/div/div[1]/div/div[2]/div[3]/div[2]/div")).Click();
+                driver.FindElement(By.XPath("/html/body/div[1]/div/div[8]/div/div[2]/div/div/div/div[2]/div/form/div[2]/div[1]/input")).Click();
+                driver.FindElement(By.XPath("/html/body/div[1]/div/div[8]/div/div[2]/div/div/div/div[2]/div/form/div[2]/div[1]/input")).SendKeys("Edzxra");
 
-                //driver.FindElement(By.XPath("/html/body/div[1]/div/div[8]/div/div[2]/div/div/div/div[2]/div/form/div[2]/div[2]/input")).Click();
-                //driver.FindElement(By.XPath("/html/body/div[1]/div/div[8]/div/div[2]/div/div/div/div[2]/div/form/div[2]/div[2]/input")).SendKeys("eder201180");
+                driver.FindElement(By.XPath("/html/body/div[1]/div/div[8]/div/div[2]/div/div/div/div[2]/div/form/div[2]/div[2]/input")).Click();
+                driver.FindElement(By.XPath("/html/body/div[1]/div/div[8]/div/div[2]/div/div/div/div[2]/div/form/div[2]/div[2]/input")).SendKeys("eder201180");
 
-                //driver.FindElement(By.XPath("/html/body/div[1]/div/div[8]/div/div[2]/div/div/div/div[2]/div/form/div[3]")).Click();
+                driver.FindElement(By.XPath("/html/body/div[1]/div/div[8]/div/div[2]/div/div/div/div[2]/div/form/div[3]")).Click();
 
-                //try
-                //{
-                //    driver.FindElement(By.XPath("/html/body/div[1]/div/div[3]/div/div[1]/div/div[2]/div/div[1]/div/div[2]/div[3]/div[2]/div")).Click();
-                //}
-                //catch { }
+                try
+                {
+                    driver.FindElement(By.XPath("/html/body/div[1]/div/div[3]/div/div[1]/div/div[2]/div/div[1]/div/div[2]/div[3]/div[2]/div")).Click();
+                }
+                catch { }
                 string[] ultimasEntradas = new string[10];
                 firstResult = wait.Until(e => e.FindElement(By.XPath("/html/body/div[1]/div/main/div[3]/div[1]/div/div[2]/div[3]/div/iframe")));
 
@@ -106,22 +106,22 @@ namespace Blaze_2._0
                 {
                     try
                     {
-                        //try
-                        //{
-                        //    firstResult = wait.Until(e => e.FindElement(By.ClassName("titleContainer--fe91d")));
-                        //    Console.WriteLine(driver.FindElement(By.ClassName("titleContainer--fe91d")).Text);
+                        try
+                        {
+                            firstResult = wait.Until(e => e.FindElement(By.ClassName("titleContainer--fe91d")));
+                            Console.WriteLine(driver.FindElement(By.ClassName("titleContainer--fe91d")).Text);
 
-                        //    if (!driver.FindElement(By.ClassName("titleContainer--fe91d")).Text.Contains("SALDO BAIXO"))
-                        //    {
-                        //        Close();
-                        //        Iniciar();
-                        //    }
-                        //}
-                        //catch
-                        //{
-                        //    Close();
-                        //    Iniciar();
-                        //}
+                            if (!driver.FindElement(By.ClassName("titleContainer--fe91d")).Text.Contains("SALDO BAIXO"))
+                            {
+                                Close();
+                                Iniciar();
+                            }
+                        }
+                        catch
+                        {
+                            Close();
+                           Iniciar();
+                        }
 
                         try
                         {
@@ -173,17 +173,7 @@ namespace Blaze_2._0
                                 horaJogada = now.Hour;
                             }
                         }
-                        // title--f4c0d
                         int contador = 0;
-                        //if (horarioReiniciou == 99)
-                        //    horarioReiniciou = now.Hour;
-
-                        //if(now.Hour != horarioReiniciou)
-                        //{
-                        //    horarioReiniciou = now.Hour;
-                        //    Close();
-                        //    Iniciar();
-                        //}
                         try
                         {
                             driver.FindElement(By.XPath("/html/body/div[4]/div/div[2]/div/div[2]/div[10]/div[1]/button")).Click();
